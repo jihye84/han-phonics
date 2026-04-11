@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한글 발음 비교 앱 - 홈</title>
+    <!-- 구글 폰트 'Noto Sans KR' 추가 (고딕체) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-body">
+    <header id="home-header">
+        <h1>어떤 한글을 배워볼까요?</h1>
+        <div class="tabs">
+            <button id="tab-grouped" class="tab-btn active">그룹별 학습 (9종)</button>
+            <button id="tab-single" class="tab-btn">낱개 자음 학습 (19종)</button>
+        </div>
+    </header>
+    
+    <!-- 그룹별 학습 컨테이너 -->
+    <main id="home-container-grouped" class="home-grid">
+        <a href="app.html?group=1" class="home-menu-btn group-1">
+            <span class="menu-title">ㄱ, ㅋ, ㄲ</span>
+            <span class="menu-subtitle">가, 카, 까</span>
+        </a>
+        <a href="app.html?group=2" class="home-menu-btn group-2">
+            <span class="menu-title">ㄷ, ㄸ, ㅌ</span>
+            <span class="menu-subtitle">다, 따, 타</span>
+        </a>
+        <a href="app.html?group=3" class="home-menu-btn group-3">
+            <span class="menu-title">ㅂ, ㅃ, ㅍ</span>
+            <span class="menu-subtitle">바, 빠, 파</span>
+        </a>
+        <a href="app.html?group=4" class="home-menu-btn group-4">
+            <span class="menu-title">ㅈ, ㅉ, ㅊ</span>
+            <span class="menu-subtitle">자, 짜, 차</span>
+        </a>
+        <a href="app.html?group=5" class="home-menu-btn group-5">
+            <span class="menu-title">ㄴ, ㄷ, ㅌ, ㄸ</span>
+            <span class="menu-subtitle">나, 다, 타, 따</span>
+        </a>
+        <a href="app.html?group=6" class="home-menu-btn group-6">
+            <span class="menu-title">ㄹ</span>
+            <span class="menu-subtitle">라, 랴, 러...</span>
+        </a>
+        <a href="app.html?group=7" class="home-menu-btn group-7">
+            <span class="menu-title">ㅁ, ㅂ, ㅍ, ㅃ</span>
+            <span class="menu-subtitle">마, 바, 파, 빠</span>
+        </a>
+        <a href="app.html?group=8" class="home-menu-btn group-8">
+            <span class="menu-title">ㅅ, ㅆ, ㅈ, ㅊ, ㅉ</span>
+            <span class="menu-subtitle">사, 싸, 자, 차, 짜</span>
+        </a>
+        <a href="app.html?group=9" class="home-menu-btn group-9">
+            <span class="menu-title">ㅇ, ㅎ</span>
+            <span class="menu-subtitle">아, 하</span>
+        </a>
+    </main>
+
+    <!-- 낱개 자음 학습 컨테이너 -->
+    <main id="home-container-single" class="home-grid hidden">
+        <a href="app.html?group=10" class="home-menu-btn single-btn"><span class="menu-title">ㄱ</span></a>
+        <a href="app.html?group=11" class="home-menu-btn single-btn"><span class="menu-title">ㄴ</span></a>
+        <a href="app.html?group=12" class="home-menu-btn single-btn"><span class="menu-title">ㄷ</span></a>
+        <a href="app.html?group=13" class="home-menu-btn single-btn"><span class="menu-title">ㄹ</span></a>
+        <a href="app.html?group=14" class="home-menu-btn single-btn"><span class="menu-title">ㅁ</span></a>
+        <a href="app.html?group=15" class="home-menu-btn single-btn"><span class="menu-title">ㅂ</span></a>
+        <a href="app.html?group=16" class="home-menu-btn single-btn"><span class="menu-title">ㅅ</span></a>
+        <a href="app.html?group=17" class="home-menu-btn single-btn"><span class="menu-title">ㅇ</span></a>
+        <a href="app.html?group=18" class="home-menu-btn single-btn"><span class="menu-title">ㅈ</span></a>
+        <a href="app.html?group=19" class="home-menu-btn single-btn"><span class="menu-title">ㅊ</span></a>
+        <a href="app.html?group=20" class="home-menu-btn single-btn"><span class="menu-title">ㅋ</span></a>
+        <a href="app.html?group=21" class="home-menu-btn single-btn"><span class="menu-title">ㅌ</span></a>
+        <a href="app.html?group=22" class="home-menu-btn single-btn"><span class="menu-title">ㅍ</span></a>
+        <a href="app.html?group=23" class="home-menu-btn single-btn"><span class="menu-title">ㅎ</span></a>
+        <a href="app.html?group=24" class="home-menu-btn single-btn"><span class="menu-title">ㄲ</span></a>
+        <a href="app.html?group=25" class="home-menu-btn single-btn"><span class="menu-title">ㄸ</span></a>
+        <a href="app.html?group=26" class="home-menu-btn single-btn"><span class="menu-title">ㅃ</span></a>
+        <a href="app.html?group=27" class="home-menu-btn single-btn"><span class="menu-title">ㅆ</span></a>
+        <a href="app.html?group=28" class="home-menu-btn single-btn"><span class="menu-title">ㅉ</span></a>
+    </main>
+
+    <script>
+        const btnGrouped = document.getElementById('tab-grouped');
+        const btnSingle = document.getElementById('tab-single');
+        const viewGrouped = document.getElementById('home-container-grouped');
+        const viewSingle = document.getElementById('home-container-single');
+
+        btnGrouped.addEventListener('click', () => {
+            btnGrouped.classList.add('active');
+            btnSingle.classList.remove('active');
+            viewGrouped.classList.remove('hidden');
+            viewSingle.classList.add('hidden');
+        });
+
+        btnSingle.addEventListener('click', () => {
+            btnSingle.classList.add('active');
+            btnGrouped.classList.remove('active');
+            viewSingle.classList.remove('hidden');
+            viewGrouped.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

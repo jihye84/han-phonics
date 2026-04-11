@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* 스크롤바 방지 */
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw; /* 전체적인 테두리 여백 */
+}
+
+#header {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+    margin-bottom: 2vh;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1vw;
+}
+
+#header h1 {
+    font-size: 5vh;
+    margin: 0;
+    color: #333;
+}
+
+.btn {
+    padding: 1vh 2vw;
+    font-size: 3vh;
+    font-family: inherit;
+    font-weight: 700;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+#app-container {
+    width: 100%;
+    height: 90vh; /* 남은 공간 활용 */
+    display: grid;
+    /* 가로축 10개 고정, 세로축은 인라인 스타일로 동적 할당됨 */
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1vw; /* 카드 사이 간격을 뷰포트 너비 기준으로 유동적으로 설정 */
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vmin; /* 화면 크기에 맞춘 폰트 크기 */
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 바운스 효과 타이밍 함수 */
+    border: 4px solid transparent;
+    color: black;
+    font-weight: 800;
+}
+
+/* 튜토리얼 대상 1학년을 위한 자음 단위별 테마 색상 설정 (유리질 느낌 + 파스텔) */
+:root {
+    --row-0-bg: #e0f7fa;
+    --row-1-bg: #fff9c4;
+    --row-2-bg: #fce4ec;
+    --row-3-bg: #e8f5e9;
+    --row-4-bg: #f3e5f5;
+    --row-5-bg: #ffe0b2;
+}
+
+.card.row-0 {
+    background: var(--row-0-bg);
+    border-color: var(--row-0-bg);
+    color: black;
+}
+
+.card.row-1 {
+    background: var(--row-1-bg);
+    border-color: var(--row-1-bg);
+    color: black;
+}
+
+.card.row-2 {
+    background: var(--row-2-bg);
+    border-color: var(--row-2-bg);
+    color: black;
+}
+
+.card.row-3 {
+    background: var(--row-3-bg);
+    border-color: var(--row-3-bg);
+    color: black;
+}
+
+.card.row-4 {
+    background: var(--row-4-bg);
+    border-color: var(--row-4-bg);
+    color: black;
+}
+
+/* 색상 끄기 토글 시 적용되는 스타일 */
+body.color-off .card {
+    background: white;
+    border-color: #ddd;
+    color: black;
+}
+
+/* ================= 홈 화면(메뉴) 스타일 ================= */
+.home-body {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5vh 5vw;
+}
+
+#home-header {
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+#home-header h1 {
+    font-size: 5vh;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1.5vh;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.tab-btn {
+    padding: 1.5vh 3vw;
+    font-size: 2.5vh;
+    font-weight: 700;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.tab-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.home-grid {
+    display: grid;
+    gap: 2vw;
+    width: 90%;
+    margin: 0 auto;
+    flex-grow: 1;
+    height: 75vh;
+}
+
+#home-container-grouped {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#home-container-single {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.home-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: black;
+    border: 5px solid transparent;
+}
+
+.home-menu-btn:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.home-menu-btn:active {
+    transform: translateY(5px) scale(0.95);
+}
+
+.menu-title {
+    font-size: 5vh;
+    font-weight: 900;
+    text-align: center;
+    word-break: keep-all;
+}
+
+.menu-subtitle {
+    font-size: 2.5vh;
+    font-weight: 700;
+    opacity: 0.8;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+/* 홈 메뉴 테마 */
+.home-menu-btn.group-1 { background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-color: #80deea; }
+.home-menu-btn.group-2 { background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%); border-color: #fff176; }
+.home-menu-btn.group-3 { background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); border-color: #f48fb1; }
+.home-menu-btn.group-4 { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-color: #81c784; }
+.home-menu-btn.group-5 { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-color: #ba68c8; }
+.home-menu-btn.group-6 { background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%); border-color: #ffb74d; }
+.home-menu-btn.group-7 { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); border-color: #80cbc4; }
+.home-menu-btn.group-8 { background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%); border-color: #f06292; }
+.home-menu-btn.group-9 { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-color: #90caf9; }
+
+/* 낱개 자음 버튼 테마 */
+.home-menu-btn.single-btn:nth-child(5n+1) { background: linear-gradient(135deg, #fff9c4, #fff59d); border-color: #fff176; }
+.home-menu-btn.single-btn:nth-child(5n+2) { background: linear-gradient(135deg, #ffe0b2, #ffcc80); border-color: #ffb74d; }
+.home-menu-btn.single-btn:nth-child(5n+3) { background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-color: #f48fb1; }
+.home-menu-btn.single-btn:nth-child(5n+4) { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-color: #90caf9; }
+.home-menu-btn.single-btn:nth-child(5n+5) { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-color: #81c784; }
+
+#home-container-single .menu-title {
+    font-size: 6vh;
+}
+
+/* 호버 이펙트 (터치 모니터 외 마우스 사용 시 대비) */
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 클릭(터치) 될 때 재생 효과 */
+.card:active, .card.playing {
+    transform: translateY(5px) scale(0.95);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.9);
+}
