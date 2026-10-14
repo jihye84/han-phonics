@@ -266,3 +266,33 @@ body.color-off .card {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     filter: brightness(0.9);
 }
+
+
+/* ── 첫 화면을 어떤 화면에서도 스크롤·잘림 없이 맞추기 ── */
+.home-body { height: 100vh; height: 100dvh; padding: 3vh 4vw; box-sizing: border-box; overflow: hidden; }
+#home-header { flex: none; margin-bottom: 2vh; }
+#home-header h1 { font-size: min(5vh, 7vw); }
+.tab-btn { font-size: min(2.5vh, 3.8vw); padding: 1.2vh 3vw; }
+.home-grid { height: auto; flex: 1 1 0; min-height: 0; width: 100%; max-width: 1600px; gap: min(2vw, 2vh); }
+#home-container-grouped { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); }
+#home-container-single { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); }
+.home-menu-btn { min-width: 0; min-height: 0; overflow: hidden; border-radius: min(30px, 3vmin); border-width: min(5px, 0.7vmin); }
+.menu-title { font-size: min(5vh, 4.4vw); line-height: 1.15; }
+.menu-subtitle { font-size: min(2.5vh, 2.6vw); margin-top: 0.6vh; }
+#home-container-single .menu-title { font-size: min(6vh, 6vw); }
+@media (orientation: portrait) {
+    #home-container-grouped { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(0, 1fr)); }
+    #home-container-single { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(0, 1fr)); }
+    .menu-title { font-size: min(4vh, 7vw); }
+    .menu-subtitle { font-size: min(2.2vh, 3.8vw); }
+    #home-container-single .menu-title { font-size: min(5vh, 9vw); }
+}
+
+/* ── 학습 화면: 휴대폰·낮은 창에서도 머리 버튼과 카드가 잘리지 않게 ── */
+body:not(.home-body) { height: 100vh; height: 100dvh; width: 100%; }
+#header { height: auto; min-height: 8vh; flex: none; flex-wrap: wrap; gap: 0.8vh 1vw; margin-bottom: 1.5vh; }
+#header h1 { font-size: min(5vh, 5vw); white-space: nowrap; }
+#header .btn { font-size: min(3vh, 3.4vw); padding: 1vh min(2vw, 2vh); white-space: nowrap; }
+.header-buttons { flex-wrap: wrap; }
+#app-container { height: auto; flex: 1 1 0; min-height: 0; }
+.card { min-width: 0; min-height: 0; font-size: min(8vmin, 6.5vw); border-radius: min(20px, 2vmin); }
